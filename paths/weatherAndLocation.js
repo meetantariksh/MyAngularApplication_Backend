@@ -3,7 +3,7 @@ var router = express.Router();
 var http = require('request');
 
 router.get('/getLocation', function(req, res, next){
-    var ip = req.connection.remoteAddress;
+    var ip = req.headers['x-forwarded-for'];
     console.log(ip);
     http('http://ip-api.com/json/'+ip,  function (error, response, body) {
         if(error){

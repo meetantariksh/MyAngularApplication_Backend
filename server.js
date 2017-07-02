@@ -7,6 +7,7 @@ var profiles = require('./paths/profile');
 var financialInformation = require('./paths/financialInformation');
 var news = require('./paths/news');
 var mutualFunds = require('./paths/mutualFunds');
+var wAndLoc = require('./paths/weatherAndLocation');
 
 var port = 3500;
 
@@ -30,6 +31,7 @@ app.use('/api', profiles);
 app.use('/fi', financialInformation);
 app.use('/news', news);
 app.use('/mf', mutualFunds);
+app.use('/weatherAndLocation', wAndLoc);
 
 app.listen(port, function(){
     console.log('Server started on port '+port);

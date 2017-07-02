@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var http = require('request');
+var ipware = require('ipware')
 
 router.get('/getLocation', function(req, res, next){
-    var ip = req.headers['x-forwarded-for'];
+    var ip = ipware.get_ip;
     console.log(ip);
     http('http://ip-api.com/json/'+ip,  function (error, response, body) {
         if(error){
